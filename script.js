@@ -1,0 +1,52 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Handle CV upload
+    const uploadCvForm = document.getElementById('uploadCvForm');
+    const uploadStatus = document.getElementById('uploadStatus');
+
+    uploadCvForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const fileInput = document.getElementById('cvUpload');
+        const file = fileInput.files[0];
+
+        if (file) {
+            const formData = new FormData();
+            formData.append('cvUpload', file);
+
+            // Simulate a file upload
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                uploadStatus.textContent = 'CV uploaded successfully!';
+                uploadStatus.style.color = 'green';
+            })
+            .catch(error => {
+                uploadStatus.textContent = 'Failed to upload CV.';
+                uploadStatus.style.color = 'red';
+            });
+        } else {
+            uploadStatus.textContent = 'Please select a file to upload.';
+            uploadStatus.style.color = 'red';
+        }
+    });
+});
