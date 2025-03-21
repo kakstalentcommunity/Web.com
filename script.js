@@ -37,7 +37,7 @@ fetch('https://api.countapi.xyz/hit/kennedy-portfolio/visits')
 });
 document.getElementById("chatbot-toggle").addEventListener("click", () => {
     let chatbox = document.getElementById("chatbox");
-    chatbox.style.display = chatbox.style.display === "block" ? "none" : "block";
+    chatbox.classList.toggle("hidden");
 });
 
 document.getElementById("send-btn").addEventListener("click", () => {
@@ -46,24 +46,27 @@ document.getElementById("send-btn").addEventListener("click", () => {
     let chatOutput = document.getElementById("chat-output");
 
     if (userMessage) {
-        let botReply = getBotReply(userMessage);
         chatOutput.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
-        chatOutput.innerHTML += `<p><strong>Bot:</strong> ${botReply}</p>`;
         inputField.value = "";
+
+        // Simple chatbot responses
+        let botReply = getBotReply(userMessage);
+        setTimeout(() => {
+            chatOutput.innerHTML += `<p><strong>Bot:</strong> ${botReply}</p>`;
+        }, 500);
     }
 });
 
 function getBotReply(message) {
-    message = message.toLowerCase();
-    if (message.includes("hello")) {
-        return "Hi! How can I help you?";
-    } else if (message.includes("projects")) {
-        return "You can check my projects in the 'Projects' section.";
-    } else if (message.includes("contact")) {
-        return "You can contact me at kennez876@gmail.com.";
-    } else {
-        return "I'm still learning! Try asking something else.";
-    }
+    let responses = {
+        "hello": "Hi there! How can I help?",
+        "how are you": "I'm just a bot, but I'm doing great!",
+        "bye": "Goodbye! Have a great day!",
+        "default": "I'm not sure how to respond to that."
+    };
+
+    let lowerMessage = message.toLowerCase();
+    return responses[lowerMessage] || responses["default"];
 }
 
 // Toggle sidebar visibility
