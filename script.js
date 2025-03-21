@@ -11,6 +11,7 @@ function typeEffect() {
 
 window.onload = typeEffect;
 
+
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
