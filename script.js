@@ -41,16 +41,16 @@ fetch('https://api.countapi.xyz/hit/kennedy-portfolio/visits')
 document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById("sidebar");
     const toggleBtn = document.getElementById("toggleBtn");
+    const closeBtn = document.getElementById("closeBtn");
 
     toggleBtn.addEventListener("click", function () {
-        if (sidebar.style.left === "-250px" || sidebar.style.left === "") {
-            sidebar.style.left = "0"; // Show sidebar
-        } else {
-            sidebar.style.left = "-250px"; // Hide sidebar
-        }
+        sidebar.style.left = "0"; // Show sidebar
+    });
+
+    closeBtn.addEventListener("click", function () {
+        sidebar.style.left = "-250px"; // Hide sidebar
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
