@@ -1,3 +1,13 @@
+// Toggle sidebar visibility
+function toggleSidebar() {
+    let sidebar = document.querySelector(".sidebar");
+    if (sidebar.style.left === "-250px") {
+        sidebar.style.left = "0";
+    } else {
+        sidebar.style.left = "-250px";
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav ul li a');
