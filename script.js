@@ -38,15 +38,19 @@ fetch('https://api.countapi.xyz/hit/kennedy-portfolio/visits')
     })
     .catch(error => console.log("Visitor count failed:", error));
 
-// ✅ Corrected Sidebar Toggle
-function toggleSidebar() {
-    let sidebar = document.querySelector(".sidebar");
-    if (sidebar.style.left === "-250px") {
-        sidebar.style.left = "0";
-    } else {
-        sidebar.style.left = "-250px";
-    }
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggleBtn");
+
+    toggleBtn.addEventListener("click", function () {
+        if (sidebar.style.left === "-250px") {
+            sidebar.style.left = "0";
+        } else {
+            sidebar.style.left = "-250px";
+        }
+    });
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
