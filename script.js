@@ -1,28 +1,16 @@
-const typedName = document.getElementById('typedName');
-const nameText = "Kennedy Musyoki";
-let index = 0;
-let isDeleting = false;
+const text = "Kennedy Musyoki";
+let i = 0;
 
 function typeEffect() {
-    if (!isDeleting && index <= nameText.length) {
-        typedName.textContent = nameText.substring(0, index);
-        index++;
-    } else if (isDeleting && index >= 0) {
-        typedName.textContent = nameText.substring(0, index);
-        index--;
+    if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 150);
     }
-
-    if (index === nameText.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, 1000);
-    } else if (index === 0) {
-        isDeleting = false;
-    }
-
-    setTimeout(typeEffect, isDeleting ? 50 : 100);
 }
 
 window.onload = typeEffect;
+
 
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault();
