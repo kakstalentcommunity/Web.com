@@ -9,20 +9,17 @@
 </head>
 <body>
 
-    <!-- Sidebar Toggle Button -->
-    <div class="menu-toggle" onclick="toggleSidebar()">
-        ☰
-    </div>
-
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <button id="closeBtn" class="close-btn">✖</button>
         <ul>
-            <li><a href="#about" onclick="toggleSidebar()">About Me</a></li>
-            <li><a href="#cv" onclick="toggleSidebar()">CV</a></li>
-            <li><a href="#skills" onclick="toggleSidebar()">Skills</a></li>
-            <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-    </aside>
+    </div>
+    <button id="toggleBtn" class="menu-btn">☰</button>
 
     <!-- Hero Section -->
     <header class="hero">
