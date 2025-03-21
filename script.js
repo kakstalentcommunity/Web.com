@@ -34,6 +34,10 @@ fetch('https://api.countapi.xyz/hit/kennedy-portfolio/visits')
         document.getElementById("visitor-count").textContent = data.value;
     })
     .catch(error => console.log("Visitor count failed:", error));
+document.getElementById("chatbot-toggle").addEventListener("click", () => {
+    let chatbox = document.getElementById("chatbox");
+    chatbox.style.display = chatbox.style.display === "block" ? "none" : "block";
+});
 
 // Toggle sidebar visibility
 function toggleSidebar() {
