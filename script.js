@@ -35,39 +35,6 @@ fetch('https://api.countapi.xyz/hit/kennedy-portfolio/visits')
     })
     .catch(error => console.log("Visitor count failed:", error));
 });
-document.getElementById("chatbot-toggle").addEventListener("click", () => {
-    let chatbox = document.getElementById("chatbox");
-    chatbox.classList.toggle("hidden");
-});
-
-document.getElementById("send-btn").addEventListener("click", () => {
-    let inputField = document.getElementById("chat-input");
-    let userMessage = inputField.value.trim();
-    let chatOutput = document.getElementById("chat-output");
-
-    if (userMessage) {
-        chatOutput.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
-        inputField.value = "";
-
-        // Simple chatbot responses
-        let botReply = getBotReply(userMessage);
-        setTimeout(() => {
-            chatOutput.innerHTML += `<p><strong>Bot:</strong> ${botReply}</p>`;
-        }, 500);
-    }
-});
-
-function getBotReply(message) {
-    let responses = {
-        "hello": "Hi there! How can I help?",
-        "how are you": "I'm just a bot, but I'm doing great!",
-        "bye": "Goodbye! Have a great day!",
-        "default": "I'm not sure how to respond to that."
-    };
-
-    let lowerMessage = message.toLowerCase();
-    return responses[lowerMessage] || responses["default"];
-}
 
 // Toggle sidebar visibility
 function toggleSidebar() {
