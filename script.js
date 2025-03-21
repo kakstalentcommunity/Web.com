@@ -11,7 +11,6 @@ function typeEffect() {
 
 window.onload = typeEffect;
 
-
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -30,15 +29,16 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         document.getElementById("formStatus").style.color = "red";
     });
 });
+
+// ✅ Moved the fetch visitor count out of the misplaced block
 fetch('https://api.countapi.xyz/hit/kennedy-portfolio/visits')
     .then(response => response.json())
     .then(data => {
         document.getElementById("visitor-count").textContent = data.value;
     })
     .catch(error => console.log("Visitor count failed:", error));
-});
 
-// Toggle sidebar visibility
+// ✅ Corrected Sidebar Toggle
 function toggleSidebar() {
     let sidebar = document.querySelector(".sidebar");
     if (sidebar.style.left === "-250px") {
