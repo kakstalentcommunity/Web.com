@@ -38,6 +38,36 @@ document.getElementById("chatbot-toggle").addEventListener("click", () => {
     let chatbox = document.getElementById("chatbox");
     chatbox.style.display = chatbox.style.display === "block" ? "none" : "block";
 });
+document.getElementById("chatbot-toggle").addEventListener("click", () => {
+    let chatbox = document.getElementById("chatbox");
+    chatbox.style.display = chatbox.style.display === "block" ? "none" : "block";
+});
+
+document.getElementById("send-btn").addEventListener("click", () => {
+    let inputField = document.getElementById("chat-input");
+    let userMessage = inputField.value.trim();
+    let chatOutput = document.getElementById("chat-output");
+
+    if (userMessage) {
+        let botReply = getBotReply(userMessage);
+        chatOutput.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+        chatOutput.innerHTML += `<p><strong>Bot:</strong> ${botReply}</p>`;
+        inputField.value = "";
+    }
+});
+
+function getBotReply(message) {
+    message = message.toLowerCase();
+    if (message.includes("hello")) {
+        return "Hi! How can I help you?";
+    } else if (message.includes("projects")) {
+        return "You can check my projects in the 'Projects' section.";
+    } else if (message.includes("contact")) {
+        return "You can contact me at kennez876@gmail.com.";
+    } else {
+        return "I'm still learning! Try asking something else.";
+    }
+}
 
 // Toggle sidebar visibility
 function toggleSidebar() {
