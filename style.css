@@ -1,3 +1,7 @@
+html, body {
+    overflow: auto;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
