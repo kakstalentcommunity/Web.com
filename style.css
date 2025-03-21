@@ -2,91 +2,105 @@ html, body {
     overflow: auto;
 }
 
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    position: relative;
-    overflow: hidden;
 }
 
-.background {
+/* Sidebar Navigation */
+.sidebar {
     position: fixed;
+    left: -250px;
     top: 0;
-    left: 0;
-    width: 100%;
+    width: 250px;
     height: 100%;
-    z-index: -1;
-    animation: changeBackgroundColor 8s infinite;
+    background: #222;
+    color: white;
+    padding-top: 60px;
+    transition: 0.3s ease-in-out;
 }
 
-header {
-    background: rgba(51, 51, 51, 0.8);
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav {
-    background: rgba(68, 68, 68, 0.8);
-    padding: 0.5rem;
-    text-align: center;
-}
-
-nav ul {
+.sidebar ul {
     list-style: none;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-section {
-    padding: 1rem 2rem;
-    margin: 1rem auto;
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
-    margin-top: 1rem;
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-form input[type="file"] {
-    margin-bottom: 1rem;
-}
-
-footer {
-    background: rgba(51, 51, 51, 0.8);
-    color: #fff;
+.sidebar ul li {
+    padding: 15px;
     text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    border-bottom: 1px solid #444;
 }
 
-@keyframes changeBackgroundColor {
-    0% { background-color: #3498db; }
-    25% { background-color: #2ecc71; }
-    50% { background-color: #e74c3c; }
-    75% { background-color: #f1c40f; }
-    100% { background-color: #3498db; }
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background: #f39c12;
+    color: black;
+}
+
+/* Toggle Button */
+.menu-toggle {
+    font-size: 30px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    background: #f39c12;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+/* Hero Section */
+.hero {
+    background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Sections */
+section {
+    padding: 50px;
+    background: white;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e67e22;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
