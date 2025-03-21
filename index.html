@@ -3,63 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kennedy Musyoki - Computer Scientist</title>
+    <title>Kennedy Musyoki - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="background"></div>
-    <header>
-        <h1>Kennedy Musyoki</h1>
-        <p>Computer Scientist | Machine Learning Enthusiast | Graphic designer</p>
-    </header>
-    <nav>
+
+    <!-- Sidebar Toggle Button -->
+    <div class="menu-toggle" onclick="toggleSidebar()">
+        ☰
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
         <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" onclick="toggleSidebar()">About Me</a></li>
+            <li><a href="#cv" onclick="toggleSidebar()">CV</a></li>
+            <li><a href="#skills" onclick="toggleSidebar()">Skills</a></li>
+            <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
         </ul>
-    </nav>
+    </aside>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Kennedy Musyoki</h1>
+            <p>Computer Scientist | Machine Learning Enthusiast | Graphic Designer</p>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>
-            Hello! I'm Kennedy Musyoki, a dedicated computer scientist with a passion for machine learning and Python. 
-            With a strong foundation in computer science principles and hands-on experience in developing machine learning models, 
-            I am committed to leveraging technology to solve complex problems and drive innovation.
-        </p>
+        <p>Hello! I'm Kennedy Musyoki, a passionate computer scientist with expertise in machine learning and software development.</p>
     </section>
+
+    <!-- CV Section -->
     <section id="cv">
-        <h2>Curriculum Vitae</h2>
-        <p>
-            <a href="cv.pdf" download="Kennedy_Musyoki_CV">Download my CV</a>
-        </p>
-        <form id="uploadCvForm">
-            <label for="cvUpload">Upload your CV:</label>
-            <input type="file" id="cvUpload" name="cvUpload" accept=".pdf,.doc,.docx">
-            <button type="submit">Upload</button>
-        </form>
-        <div id="uploadStatus"></div>
+        <h2>My Resume</h2>
+        <a href="cv.pdf" download class="btn">Download CV</a>
     </section>
+
+    <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>Programming Languages: React, Python, Java, C++</li>
-            <li>Machine Learning: Scikit-Learn, TensorFlow, Keras</li>
-            <li>Data Analysis: Pandas, NumPy, Matplotlib</li>
-            <li>Web Development: HTML, CSS, JavaScript, React</li>
-            <li>Database Management: SQL, MongoDB</li>
-            <li>Graphics Design: posters, Banners, Flyers, Cards</li>
-             <li>Version Control: Git, GitHub</li>
+            <li>React, JavaScript, Python</li>
+            <li>Machine Learning: TensorFlow, Keras</li>
+            <li>Graphics Design: Photoshop, Illustrator</li>
         </ul>
     </section>
+
+    <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact: 0750052006</h2>
-        <p>Email: kennez876@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/kennedy-musyoki" target="_blank">Kennedy Musyoki</a></p>
+        <h2>Contact</h2>
+        <p><i class="fas fa-envelope"></i> kennez876@gmail.com</p>
+        <p><i class="fas fa-phone"></i> 0750052006</p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kennedy-musyoki" target="_blank">LinkedIn</a></p>
     </section>
+
     <footer>
-        <p>@copy; 2025 Kennedy Musyoki. All rights reserved.</p>
+        <p>© 2025 Kennedy Musyoki. All rights reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
