@@ -28,6 +28,12 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         document.getElementById("formStatus").style.color = "red";
     });
 });
+fetch('https://api.countapi.xyz/hit/kennedy-portfolio/visits')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("visitor-count").textContent = data.value;
+    })
+    .catch(error => console.log("Visitor count failed:", error));
 
 // Toggle sidebar visibility
 function toggleSidebar() {
