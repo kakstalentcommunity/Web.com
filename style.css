@@ -1,6 +1,23 @@
 html, body {
     overflow: auto;
 }
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+#scrollTopBtn:hover {
+    background: #e67e22;
+}
 
 /* General Styles */
 body {
