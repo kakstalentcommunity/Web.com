@@ -10,6 +10,24 @@ function typeEffect() {
 }
 
 window.onload = typeEffect;
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let formData = new FormData(this);
+    fetch("https://formsubmit.co/kennez876@gmail.com", {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => {
+        document.getElementById("formStatus").innerText = "Message sent successfully!";
+        document.getElementById("formStatus").style.color = "green";
+        document.getElementById("contactForm").reset();
+    })
+    .catch(error => {
+        document.getElementById("formStatus").innerText = "Failed to send message.";
+        document.getElementById("formStatus").style.color = "red";
+    });
+});
 
 // Toggle sidebar visibility
 function toggleSidebar() {
