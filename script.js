@@ -1,3 +1,16 @@
+const text = "Kennedy Musyoki";
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 150);
+    }
+}
+
+window.onload = typeEffect;
+
 // Toggle sidebar visibility
 function toggleSidebar() {
     let sidebar = document.querySelector(".sidebar");
