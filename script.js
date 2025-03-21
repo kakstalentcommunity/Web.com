@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.getElementById("toggleBtn");
 
     toggleBtn.addEventListener("click", function () {
-        if (sidebar.style.left === "-250px") {
-            sidebar.style.left = "0";
+        if (sidebar.style.left === "-250px" || sidebar.style.left === "") {
+            sidebar.style.left = "0"; // Show sidebar
         } else {
-            sidebar.style.left = "-250px";
+            sidebar.style.left = "-250px"; // Hide sidebar
         }
     });
 });
