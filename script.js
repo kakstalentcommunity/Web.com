@@ -74,14 +74,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.getElementById("toggleBtn");
     const closeBtn = document.getElementById("closeBtn");
 
+    // Open sidebar
     toggleBtn.addEventListener("click", function () {
         sidebar.style.left = "0"; // Show sidebar
     });
 
+    // Close sidebar
     closeBtn.addEventListener("click", function () {
         sidebar.style.left = "-250px"; // Hide sidebar
     });
+
+    // Close sidebar when clicking outside of it
+    document.addEventListener("click", function (event) {
+        if (!sidebar.contains(event.target) && event.target !== toggleBtn) {
+            sidebar.style.left = "-250px"; // Hide sidebar
+        }
+    });
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
