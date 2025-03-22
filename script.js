@@ -68,30 +68,37 @@ fetch('https://api.countapi.xyz/hit/kennedy-portfolio/visits')
         document.getElementById("visitor-count").textContent = data.value;
     })
     .catch(error => console.log("Visitor count failed:", error));
-
 document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById("sidebar");
     const toggleBtn = document.getElementById("toggleBtn");
     const closeBtn = document.getElementById("closeBtn");
 
-    // Open sidebar
-    toggleBtn.addEventListener("click", function () {
+    function openSidebar() {
         sidebar.style.left = "0"; // Show sidebar
-    });
+    }
 
-    // Close sidebar
-    closeBtn.addEventListener("click", function () {
+    function closeSidebar() {
         sidebar.style.left = "-250px"; // Hide sidebar
-    });
+    }
 
-    // Close sidebar when clicking outside of it
+    // Click events for buttons
+    toggleBtn.addEventListener("click", openSidebar);
+    closeBtn.addEventListener("click", closeSidebar);
+
+    // Close sidebar when clicking outside of it (for both PC & mobile)
     document.addEventListener("click", function (event) {
         if (!sidebar.contains(event.target) && event.target !== toggleBtn) {
-            sidebar.style.left = "-250px"; // Hide sidebar
+            closeSidebar();
+        }
+    });
+
+    // Touch support for mobile users
+    document.addEventListener("touchstart", function (event) {
+        if (!sidebar.contains(event.target) && event.target !== toggleBtn) {
+            closeSidebar();
         }
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
