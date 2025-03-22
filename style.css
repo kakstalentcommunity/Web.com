@@ -59,7 +59,6 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
-
 .sidebar {
     position: fixed;
     left: -250px; /* Initially hidden */
@@ -70,6 +69,7 @@ body {
     color: white;
     transition: left 0.3s ease-in-out; /* Smooth sliding */
     padding-top: 20px;
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
 .sidebar ul {
@@ -96,6 +96,7 @@ body {
     background: none;
     border: none;
     color: white;
+    z-index: 1100; /* Ensure menu button is above sidebar */
 }
 
 .close-btn {
@@ -109,7 +110,11 @@ body {
     color: white;
 }
 
-
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80%; /* Adjust for smaller screens */
+    }
+}
 
 /* Hero Section */
 .hero {
