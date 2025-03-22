@@ -1,3 +1,34 @@
+document.addEventListener("DOMContentLoaded", function () {
+    function getGreeting() {
+        let now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}`; // Format time properly
+        let greetingMessage = "";
+
+        if (hours >= 5 && hours < 12) {
+            greetingMessage = "Good morning! ☀️";
+        } else if (hours >= 12 && hours < 18) {
+            greetingMessage = "Good afternoon! 🌤️";
+        } else if (hours >= 18 && hours < 22) {
+            greetingMessage = "Good evening! 🌙";
+        } else {
+            greetingMessage = "Good night! 🌌";
+        }
+
+        let notification = document.getElementById("greeting-notification");
+        notification.innerText = `${formattedTime}, ${greetingMessage} Welcome to Kennedy's Portfolio!`;
+        notification.classList.add("show");
+
+        // Hide notification after 5 seconds
+        setTimeout(() => {
+            notification.classList.remove("show");
+        }, 5000);
+    }
+
+    getGreeting(); // Call function on page load
+});
+
 const text = "Kennedy Musyoki";
 let i = 0;
 
