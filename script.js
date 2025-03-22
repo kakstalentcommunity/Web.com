@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         let notification = document.getElementById("greeting-notification");
-        notification.innerText = `${formattedTime}, ${greetingMessage} Welcome to Kennedy's Portfolio!`;
+        notification.innerText = `${formattedTime}, ${greetingMessage} Welcome to dev Kennedy's Portfolio!`;
         notification.classList.add("show");
 
         // Hide notification after 5 seconds
@@ -46,7 +46,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     event.preventDefault();
 
     let formData = new FormData(this);
-    fetch("https://formsubmit.co/kennez876@gmail.com", {
+    fetch("https://formsubmit.co/el/locido/kennez876@gmail.com", {
         method: "POST",
         body: formData,
     })
